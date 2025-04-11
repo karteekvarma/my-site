@@ -44,8 +44,8 @@ export default function ChatWindow() {
 
 //###########################################################################
 
-//######## Just a simple endpoint to test the server and your skills#########
-
+//######## Just a simple endpoint to test the server and your skills ########
+//          This is in accordance with the GET section in main.py
 //###########################################################################
 
     // try {
