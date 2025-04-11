@@ -1,0 +1,142 @@
+.header {
+  background-color: #f8f9fa;
+  padding: 20px;
+}
+
+.headerflex {
+  display: flex;
+  align-items: center;
+  gap: 30px; /* space between avatar and text */
+}
+
+.avatar {
+  width: 220px;
+  height: 220px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.content h1 {
+  font-size: 35px;
+  margin: 0;
+}
+
+.content h2 {
+  font-size: 21px;
+  color: #6c757d;
+  margin: 4px 0;
+}
+
+.pagewrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: stretch;
+  gap: 40px;
+  padding: 40px;
+  flex-wrap: nowrap; /* optional: good for responsiveness */
+}
+
+.intro {
+  flex: 1;
+  max-width: 45%;
+  text-align: left;
+}
+
+/* Right side placeholder */
+.chatbot {
+  flex: 1;
+  max-width: 35%;
+  height: 600px;
+  max-width: 600px;
+  background-color: #f4f4f9;
+  border-radius: 18px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.08);
+  outline: 10px solid rgba(158, 54, 28, 0.2);
+}
+
+
+.chat-window {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  overflow: hidden;
+  background-color: #f8f9fa;
+  padding: 16px;
+  border-radius: 12px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.08);
+  outline: 5px solid rgba(218, 165, 32, 0.2); /* Semi-transparent goldenrod */
+}
+
+.messages {
+  flex: 1;
+  overflow-y: auto;
+  min-height: 0;
+  padding: 5px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  min-height: 0;
+
+}
+
+.message-bubble {
+  max-width: 70%;
+  padding: 5px 8px;
+  border-radius: 16px;
+  font-size: 16px;
+  line-height: 1;
+  margin: 2px 0;
+  display: inline-block;
+  word-wrap: break-word;
+  white-space: pre-wrap;
+}
+
+.message-bubble.bot {
+  background-color: #f1f5f9; /* Light gray */
+  border: 1px solid #cbd5e1;
+ 
+  text-align: left;
+  color: #111827;
+}
+
+.message-bubble.user {
+  background-color: #dbeafe; /* Light blue */
+  border: 1px solid #3b82f6;
+  align-self: flex-end;
+  text-align: right;
+  color: #1e3a8a;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(5px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+
+.chat-input {
+  display: flex;
+  gap: 10px;
+}
+
+.chat-input input {
+  flex: 1;
+  padding: 10px;
+  font-size: 16px;
+}
+
+.chat-input button {
+  padding: 10px 16px;
+  background-color: #0d6efd;
+  color: white;
+  border: none;
+  border-radius: 6px;
+}
