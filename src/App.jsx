@@ -1,4 +1,9 @@
 import ChatWindow from "./components/ChatWindow";
+import Tabs from "./components/Tabs";
+import Skills, { DomainSkills } from "./components/Skills";
+import TypewriterBanner from "./components/TypewriterBanner";
+
+
 
 
 function Header() {
@@ -10,8 +15,10 @@ function Header() {
           <h1>Karteek Varma Pericharla</h1>
           <h2>Software Developer, AI Enthusiast</h2>
           <h2>Illinois Institute of Technology || MS Artificial Intelligence</h2>
-        </ div>
-      </ div>
+          <TypewriterBanner/>
+
+        </div>
+      </div>
     </header>
   );
 }
@@ -20,7 +27,6 @@ function Header() {
 function Aboutme() {
   return (
     <div className="pagewrapper">
-
       <div className="intro">
         <h2 style={{ fontSize: "35px" }} className="section-header" >About Me</h2>
         <p style={{ fontSize: "25px" }}className="intro-text">
@@ -30,22 +36,25 @@ function Aboutme() {
           As much as it sounds simple, I can help you understand more about me in an easy way —
           you can chat with me on the other side.
         </p>
-      </div>
+        <Skills/>
+        <DomainSkills />
+        </div>
 
-      <div className="chatbot">
-      <h2 style={{ fontSize: "35px" }} className="section-header2" >Talk To Me</h2>        
-          <ChatWindow />
+      <div id="chat-section" className="chatbot">
+      <h2 style={{ fontSize: "35px" }} className="section-header2" >Hi I'am Kar_Per</h2>         
+            <ChatWindow />
       </div>
     </div>
   );
 }
 
 
- export default function App() {
+export default function App() {
   return (
-    <div className="App">      
+    <div className="App">  
         <Header/>    
-        <Aboutme/>
+        <Tabs/>
+        <Aboutme/>        
     </div>
   );
 }
