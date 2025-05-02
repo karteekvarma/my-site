@@ -250,4 +250,15 @@
   }
 }
 
+.form-container {
+  margin: 0 auto;
+  padding: 20px 40px;
+  margin-bottom: 10px;
+  margin-top: 40px;
+  box-sizing: border-box;
+  background: linear-gradient(to right, #ffeae0, #ffc1b2); 
+  border-radius: 16px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
 

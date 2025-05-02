@@ -2,6 +2,7 @@ import ChatWindow from "./components/ChatWindow";
 import Tabs from "./components/Tabs";
 import Skills, { DomainSkills } from "./components/Skills";
 import TypewriterBanner from "./components/TypewriterBanner";
+import Forms from "./components/Forms";
 
 
 
@@ -54,7 +55,8 @@ export default function App() {
     <div className="App">  
         <Header/>    
         <Tabs/>
-        <Aboutme/>        
+        <Aboutme/>  
+        <Forms/>
     </div>
   );
 }

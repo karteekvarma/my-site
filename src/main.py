@@ -19,7 +19,7 @@ class ChatRequest(BaseModel):
 @app.post("/chat")
 async def chat(req: ChatRequest):
     user_message = req.message
-    return {"response": f"From Backend||-> I heard you say {user_message}"}
+    return {"response": f"From Backend: I heard you say {user_message}"}
 
 ###########################################################################
 
