@@ -2,10 +2,21 @@ import React, { useState } from 'react';
 
 function Forms() {
     const [inputValue, setInputValue] = useState('');
+    const [emailinput, setEmail] = useState('');
+    const [messageinput, setMessage] = useState('');
 
     const handleChange = (e) => {
         setInputValue(e.target.value);
+ 
       };
+
+    const handleEmailChange = (e) => {
+        setEmail(e.target.value);
+    };
+
+    const handleMessageChange = (e) => {
+        setMessage(e.target.value);
+    }    
 
     return (
         <div className="form-container">
@@ -29,8 +40,8 @@ function Forms() {
             <strong style={{ fontSize: "25px", paddingLeft: "100px", paddingRight: "50px" }} className="form-name">Email:  </strong>
             <input 
                 type="text" 
-                value={inputValue} 
-                onChange={handleChange} 
+                value={emailinput} 
+                onChange={handleEmailChange} 
                 style={{
                     width: "500px",
                     height: "80px",
@@ -44,8 +55,8 @@ function Forms() {
             <strong style={{ fontSize: "25px", paddingRight: "23px", }} className="form-name">Message:  </strong>
             <input 
                 type="text" 
-                value={inputValue} 
-                onChange={handleChange} 
+                value={messageinput} 
+                onChange={handleMessageChange} 
                 style={{
                     width: "1045px",
                     height: "80px",
@@ -69,6 +80,8 @@ function Forms() {
                 cursor: "pointer"
             }} onClick={() => {
                 setInputValue('');
+                setEmail('');
+                setMessage('');
                 alert("Form Submitted");
             }}>SUBMIT</button>
         </div>
