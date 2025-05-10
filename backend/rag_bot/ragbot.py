@@ -1,16 +1,23 @@
-# loader
 
+import os
+import torch
 from transformers import AutoModelForCausalLM, AutoTokenizer, BitsAndBytesConfig
 from langchain_community.embeddings import HuggingFaceEmbeddings
 from langchain_community.vectorstores import Chroma
 
-import torch
+# === Paths ===
+BASE_DIR = os.path.dirname(__file__)
+CACHE_DIR = os.path.join(BASE_DIR, "cache_dir")
+persist_directory = os.path.join(BASE_DIR, "chroma_store")
 
-# Load tokenizer and model
-tokenizer = AutoTokenizer.from_pretrained("microsoft/phi-2")
+# === Tokenizer ===
+tokenizer = AutoTokenizer.from_pretrained(
+    "microsoft/phi-2",
+    cache_dir=CACHE_DIR
+)
 tokenizer.pad_token = tokenizer.eos_token
 
-
+# === Optional Quantization Config (for GPU use only) ===
 bnb_config = BitsAndBytesConfig(
     load_in_4bit=True,
     bnb_4bit_use_double_quant=True,
@@ -18,31 +25,18 @@ bnb_config = BitsAndBytesConfig(
     bnb_4bit_compute_dtype=torch.float16
 )
 
+# === Model ===
 model = AutoModelForCausalLM.from_pretrained(
     "microsoft/phi-2",
-    device_map="auto",
-    quantization_config=bnb_config,
-    offload_folder="./offload"
+    cache_dir=CACHE_DIR,
+    device_map="auto"
 )
 
-# Load embedding model and persistent vector DB
+# === Embedding model + Chroma vector DB ===
 embedding_model = HuggingFaceEmbeddings(model_name="sentence-transformers/all-MiniLM-L6-v2")
 
-
 db = Chroma(
-    persist_directory="C:\\Users\\varma\\my-site\\backend\\chroma_store",
+    persist_directory=persist_directory,
     embedding_function=embedding_model,
     collection_name="karteek_context"
 )
-
-#import os
-#print(os.listdir("./chroma_store"))
-
-# turn your vectorstore into a retriever
-#retriever = db.as_retriever(search_kwargs={"k": 1})
-
-# quick check—run this once in a REPL or at module import time:
-# docs = retriever.get_relevant_documents("Where does he live?")
-# print(f"🔥 Retrieved {len(docs)} docs!")
-# for d in docs:
-#     print("→", d.page_content[:200].replace("\n"," "), "…")

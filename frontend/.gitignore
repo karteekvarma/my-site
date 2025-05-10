@@ -22,3 +22,9 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+*.docx
+*.pdf
+
+backend/cache_dir/
+runfiles/
+

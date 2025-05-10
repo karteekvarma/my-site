@@ -73,11 +73,14 @@ async def chat(req: ChatRequest):
 
 # ===== Static Frontend Support Below =====
 
-frontend_path = os.path.join(os.path.dirname(__file__), "../frontend_build")
+frontend_path = frontend_path = os.path.join(os.path.dirname(__file__), "../frontend/dist")
 static_path = os.path.join(frontend_path, "static")
 
 # Mount /static route
-app.mount("/static", StaticFiles(directory=static_path), name="static")
+if os.path.exists(static_path):
+    app.mount("/static", StaticFiles(directory=static_path), name="static")
+else:
+    print(f"⚠️ Warning: Static files not found at {static_path}")
 
 # Serve the index.html for the root
 @app.get("/")
