@@ -4,7 +4,7 @@ FROM node:20-alpine AS frontend
 WORKDIR /app
 COPY frontend/ .
 
-RUN npm install && npm run build
+RUN npm ci && npm run build
 
 # ---------- Stage 2: FastAPI Backend ----------
 FROM python:3.11-slim AS backend
@@ -17,7 +17,8 @@ RUN pip install --no-cache-dir -r requirements.txt
 
 # Copy backend code and built frontend
 COPY backend/ ./backend/
-COPY --from=frontend /app/build ./frontend_build/
+COPY --from=frontend /app/dist ./frontend_build/
+
 
 # Expose port for FastAPI
 EXPOSE 8000
