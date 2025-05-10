@@ -20,6 +20,7 @@ COPY backend/ ./backend/
 COPY --from=frontend /app/dist ./frontend_build/
 
 
+
 # Expose port for FastAPI
 EXPOSE 8000
 
