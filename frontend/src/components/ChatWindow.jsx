@@ -5,7 +5,7 @@ import ChatInput from "./ChatInput";
 
 export default function ChatWindow() {
   const [messages, setMessages] = useState([
-    { role: "bot", text: "Hi! Ask me anything about Karteek." }
+    { role: "bot", text: "Hi! Ask me anything about Karteek. Sometimes I might Hallucinate too!!" }
   ]);
 
   const bottomRef = useRef(null);
