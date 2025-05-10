@@ -13,11 +13,11 @@ export default function ChatWindow() {
         bottomRef.current?.scrollIntoView({ behavior: "smooth" });
     }, [messages]); 
 
-  const handleSend = async (userInput) => {
+  const handleSend = async (userInput) => {  
     setMessages((prev) => [
       ...prev,
       { role: "user", text: userInput },
-      { role: "bot", text: "This is a dummy response until the backend exists" }
+      //{ role: "bot", text: "This is a dummy response until the backend exists" }
     ]);
 
     try {
@@ -42,33 +42,7 @@ export default function ChatWindow() {
       ]);
     }
 
-//###########################################################################
 
-//######## Just a simple endpoint to test the server and your skills ########
-//          This is in accordance with the GET section in main.py
-//###########################################################################
-
-    // try {
-    //   const res = await fetch(`http://localhost:8000/mimic?message=${encodeURIComponent(userInput)}`, {
-    //     method: "GET",
-    //   });
-
-    //   const data = await res.json();
-    //   const botResponse = data.response;
-
-    //   setMessages((prev) => [...prev, { role: "bot", text: botResponse }]);
-      
-    // } catch (error) {
-    //   console.error("Backend error:", error);
-    //   setMessages((prev) => [
-    //     ...prev,
-    //     { role: "bot", text: "Oops, backend failed to respond for get" },
-    //   ]);
-    // }
-
-  //  ###########################################################################
-  //  ###########################################################################
-  //  ###########################################################################
 
   };
 
