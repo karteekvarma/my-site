@@ -13,13 +13,12 @@ WORKDIR /app
 
 # Pre-copy and install dependencies for better caching
 COPY backend/requirements.txt ./requirements.txt
+RUN mkdir -p /root/.config/pip && echo "[global]\ndisable-pip-version-check = true\nno-cache-dir = true\nrequire-hashes = false" > /root/.config/pip/pip.conf
 RUN pip install --no-cache-dir -r requirements.txt
 
 # Copy backend code and built frontend
 COPY backend/ ./backend/
 COPY --from=frontend /app/dist ./frontend_build/
-
-
 
 # Expose port for FastAPI
 EXPOSE 8000
