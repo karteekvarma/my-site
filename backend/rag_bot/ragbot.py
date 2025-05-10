@@ -30,7 +30,7 @@ embedding_model = HuggingFaceEmbeddings(model_name="sentence-transformers/all-Mi
 
 
 db = Chroma(
-    persist_directory="C:\\Users\\varma\\my-site\\src\\chroma_store",
+    persist_directory="C:\\Users\\varma\\my-site\\backend\\chroma_store",
     embedding_function=embedding_model,
     collection_name="karteek_context"
 )
