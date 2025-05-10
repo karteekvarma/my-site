@@ -1,0 +1,11 @@
+version: "3.9"
+
+services:
+  app:
+    build: .
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./backend/chroma_store:/app/backend/chroma_store
+    environment:
+      - PYTHONUNBUFFERED=1

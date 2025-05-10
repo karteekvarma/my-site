@@ -1,0 +1,23 @@
+# Core Web API & Server
+fastapi
+uvicorn
+
+# Language Models & Transformers
+transformers
+torch
+
+# LangChain Core & Community Plugins
+langchain
+langchain-community
+
+# Chroma Vector Store
+chromadb
+
+# Embeddings (HuggingFace)
+sentence-transformers
+
+# PDF support
+pypdf
+
+# Progress bars
+tqdm
