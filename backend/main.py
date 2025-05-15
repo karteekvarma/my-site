@@ -6,7 +6,7 @@ from fastapi.staticfiles import StaticFiles
 from fastapi.responses import FileResponse
 from pydantic import BaseModel
 from dotenv import load_dotenv
-from backend.rag_bot.ragbot import db
+from rag_bot.ragbot import db
 from pathlib import Path
 from requests.exceptions import HTTPError
 
