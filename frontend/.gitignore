@@ -24,6 +24,7 @@ dist-ssr
 *.sw?
 *.docx
 *.pdf
+*.env
 
 backend/cache_dir/
 runfiles/

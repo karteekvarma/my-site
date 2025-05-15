@@ -1,11 +1,18 @@
-version: "3.9"
+version: '3.8'
 
 services:
-  app:
-    build: .
+  webapp:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: karteek_chatbot
     ports:
       - "8000:8000"
-    volumes:
-      - ./backend/chroma_store:/app/backend/chroma_store
+    env_file:
+      - ./backend/rag_bot/rag-bot-key.env
     environment:
-      - PYTHONUNBUFFERED=1
+      # Optional: pass the dotenv path if you want to dynamically resolve it inside Python
+      DOTENV_PATH: ./backend/rag_bot/rag-bot-key.env
+    volumes:
+      - ./backend/rag_bot/chroma_store:/app/backend/rag_bot/chroma_store  # Persist vector DB
+    restart: unless-stopped

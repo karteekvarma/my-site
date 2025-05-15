@@ -1,42 +1,62 @@
-
 import os
-import torch
-from transformers import AutoModelForCausalLM, AutoTokenizer, BitsAndBytesConfig
+import requests
 from langchain_community.embeddings import HuggingFaceEmbeddings
-from langchain_community.vectorstores import Chroma
+from langchain_chroma import Chroma
 
-# === Paths ===
-BASE_DIR = os.path.dirname(__file__)
-CACHE_DIR = os.path.join(BASE_DIR, "cache_dir")
-persist_directory = os.path.join(BASE_DIR, "chroma_store")
+from dotenv import load_dotenv
+from pathlib import Path
 
-# === Tokenizer ===
-tokenizer = AutoTokenizer.from_pretrained(
-    "microsoft/phi-2",
-    cache_dir=CACHE_DIR
-)
-tokenizer.pad_token = tokenizer.eos_token
+# === Load Mistral API Key from .env ===
 
-# === Optional Quantization Config (for GPU use only) ===
-bnb_config = BitsAndBytesConfig(
-    load_in_4bit=True,
-    bnb_4bit_use_double_quant=True,
-    bnb_4bit_quant_type="nf4",
-    bnb_4bit_compute_dtype=torch.float16
-)
+load_dotenv(dotenv_path="rag-bot-key.env")
 
-# === Model ===
-model = AutoModelForCausalLM.from_pretrained(
-    "microsoft/phi-2",
-    cache_dir=CACHE_DIR,
-    device_map="auto"
-)
 
-# === Embedding model + Chroma vector DB ===
+BASE_DIR = Path(__file__).resolve().parent
+persist_directory = os.getenv("CHROMA_DIR", str(BASE_DIR / "chroma_store"))
+
+
+
+MISTRAL_API_KEY = os.getenv("MISTRAL_API_KEY")
+MISTRAL_API_URL = "https://api.mistral.ai/v1/chat/completions"
+MISTRAL_HEADERS = {
+    "Authorization": f"Bearer {MISTRAL_API_KEY}",
+    "Content-Type": "application/json"
+}
+
+def query_mistral_api(prompt: str):
+    """Query the official Mistral API with context-aware prompt."""
+    payload = {
+        "model": "mistral-small",  # or mistral-tiny / mistral-medium
+        "messages": [
+            {"role": "system", "content": "You are a helpful assistant."},
+            {"role": "user", "content": prompt}
+        ],
+        "temperature": 0.7,
+        "max_tokens": 150
+    }
+
+    response = requests.post(MISTRAL_API_URL, headers=MISTRAL_HEADERS, json=payload)
+    response.raise_for_status()
+    return response.json()["choices"][0]["message"]["content"]
+
+
 embedding_model = HuggingFaceEmbeddings(model_name="sentence-transformers/all-MiniLM-L6-v2")
-
 db = Chroma(
     persist_directory=persist_directory,
     embedding_function=embedding_model,
     collection_name="karteek_context"
 )
+
+# === Example Usage ===
+if __name__ == "__main__":
+    query = "Who is Karteek Varma?"
+    docs = db.similarity_search(query, k=2)
+    print("🔍 Retrieved Chunks:")
+    for i, doc in enumerate(docs):
+        print(f"Chunk {i+1}:\n{doc.page_content}\n{'='*40}")
+
+    context = "\n\n".join([doc.page_content for doc in docs])
+
+    final_prompt = f"Use the following context to answer the question.\n\nContext:\n{context}\n\nQuestion: {query}"
+    result = query_mistral_api(final_prompt)
+    print("🤖 Response:", result)

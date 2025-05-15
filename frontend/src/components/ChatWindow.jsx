@@ -35,7 +35,7 @@ export default function ChatWindow() {
       // Add bot's response to chat
       setMessages((prev) => [...prev, { role: "bot", text: botResponse }]);
     } catch (error) {
-      console.error("Backend error:", error);
+      console.error("🛑 Backend error:", error);
       setMessages((prev) => [
       ...prev,
       { role: "bot", text: "Oops, backend failed to respond" },
