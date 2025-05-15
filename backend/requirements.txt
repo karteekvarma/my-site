@@ -8,6 +8,7 @@ langchain-chroma
 sentence-transformers
 chromadb>=0.4.22
 pypdf
+huggingface_hub[hf_xet]
 
 tqdm
 python-dotenv
