@@ -28,6 +28,7 @@ dist-ssr
 *.sqlite3
 *.bin
 *.pdf
+*.pyc
 
 backend/cache_dir/
 runfiles/
