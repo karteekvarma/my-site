@@ -11,7 +11,8 @@ BASE_DIR = Path(__file__).resolve().parent
 persist_directory = os.getenv("CHROMA_DIR", str(BASE_DIR / "chroma_store"))
 
 # Only load embeddings if needed
-RUNNING_ON_RENDER = os.getenv("RENDER", "0") == "1"
+RUNNING_ON_RENDER = os.getenv("RENDER_EXTERNAL_URL") is not None
+
 
 if RUNNING_ON_RENDER:
     # On Render: Don't use an embedding model
