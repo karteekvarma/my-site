@@ -25,6 +25,9 @@ dist-ssr
 *.docx
 *.pdf
 *.env
+*.sqlite3
+*.bin
+*.pdf
 
 backend/cache_dir/
 runfiles/
