@@ -13,7 +13,7 @@ function Header() {
       <div className="headerflex">
         <img
           className="avatar"
-          src='https://drive.google.com/uc?export=view&id=1bvFgUlsJBUPXwXVrUL7Nr3Jher8O4_S8'
+          src='https://imgur.com/0IGhiP2.jpg'
           alt="My Photo"
         />
 
