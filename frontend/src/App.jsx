@@ -11,7 +11,12 @@ function Header() {
   return (
     <header className="header">
       <div className="headerflex">
-        <img className="avatar" src="\\my-site\\frontend\\photo3.jpg" alt="My Photo" />
+        <img
+          className="avatar"
+          src="https://drive.google.com/uc?export=view&id=1bvFgUlsJBUPXwXVrUL7Nr3Jher8O4_S8"
+          alt="My Photo"
+        />
+
         <div className="content">
           <h1>Karteek Varma Pericharla</h1>
           <h2>Software Developer, AI Enthusiast</h2>
