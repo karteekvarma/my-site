@@ -40,7 +40,7 @@ def query_mistral_api(prompt: str):
     return response.json()["choices"][0]["message"]["content"]
 
 
-embedding_model = HuggingFaceEmbeddings(model_name="sentence-transformers/all-MiniLM-L6-v2")
+embedding_model = HuggingFaceEmbeddings(model_name="sentence-transformers/paraphrase-MiniLM-L3-v2")
 db = Chroma(
     persist_directory=persist_directory,
     embedding_function=embedding_model,
