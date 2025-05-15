@@ -33,4 +33,3 @@ dist-ssr
 backend/cache_dir/
 runfiles/
 backend/chroma_store/
-
