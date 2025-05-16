@@ -5,55 +5,95 @@ return (
 
         <div className="allskills">
 
-            <div className="skilllist">
-                <p style={{ fontSize: "20px" }} className="skills-text1">
-                🔹<strong>Programming & Scripting:</strong><br />
-                    Python, JavaScript, TypeScript, C#, SQL
-                    <br /><br />
-                    🔹 <strong>Machine Learning & AI:</strong><br />
-                    Scikit-learn, TensorFlow, PyTorch, Transformer Models, Reinforcement Learning (DDQL), Large Language Models
-                    <br /><br />
-                    🔹 <strong>Deep Learning Specializations:</strong><br />
-                    NLP: GPT, Word2Vec, NLTK, TextBlob
-                    <br /><br />
-                    Computer Vision: Object Detection, Facial Recognition
-                    <br /><br />
-                    LLMs: Fine-tuning | Text Summarization | Conversational AI
-                    <br /><br />
-                    🔹 <strong>DevOps & Tools:</strong><br />
-                    Git, CI/CD Pipelines, Agile Methodologies
-                    <br /><br />
-                    
-                </p>
+            <div
+            className="skills-grid"
+            style={{
+                fontSize: '20px',
+                display: 'grid',
+                gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))',
+                gap: '1.5rem',
+            }}
+            >
+            <div className="skill-category">
+                <h3>💻 Programming & Scripting</h3>
+                <ul>
+                    <li>Python</li>
+                    <li>JavaScript / TypeScript</li>
+                    <li>C#</li>
+                    <li>SQL</li>
+                    <li>React.js / Node.js</li>
+                    <li>FastAPI</li>
+                </ul>
             </div>
+
+            <div className="skill-category">
+                <h3>🤖 Machine Learning & AI</h3>
+                <ul>
+                    <li>Scikit-learn</li>
+                    <li>TensorFlow</li>
+                    <li>PyTorch</li>
+                    <li>Transformer Models</li>
+                    <li>Reinforcement Learning (DDQL)</li>
+                    <li>Large Language Models</li>
+                </ul>
+            </div>
+
+            <div className="skill-category">
+                <h3>🧠 Deep Learning Specialties</h3>
+                <ul>
+                    <li><strong>NLP:</strong> GPT, Word2Vec, NLTK, TextBlob</li>
+                    <li><strong>Computer Vision:</strong> Object Detection, Facial Recognition</li>
+                    <li><strong>LLMs:</strong> Fine-tuning • Text Summarization • Conversational AI</li>
+                </ul>
+            </div>
+
+            <div className="skill-category">
+                <h3>⚙️ DevOps & Tools</h3>
+                <ul>
+                    <li>Git</li>
+                    <li>CI/CD Pipelines</li>
+                    <li>Agile Methodologies</li>
+                </ul>
+            </div>
+
+            
+        </div>
+
 
             <div className="skilllist2">
 
-                <p style={{ fontSize: "20px" }} className="skills-text1">
-                    🔹 <strong>Data Analysis & Visualization:</strong><br />
-                    Tableau, Power BI, Matplotlib, Seaborn, ggplot
-                    <br /><br />
-                    🔹 <strong>Database & Big Data:</strong><br />
-                    MS SQL, Database Design, Query Optimization, Data Warehousing
-                    <br /><br />
-                    🔹 <strong>Data Engineering:</strong><br />
-                    Data Preprocessing | Feature Engineering | AWS-based Big Data Handling
-                    <br /><br />
-                    Graph-based Data Processing | Custom Pipeline Development
-                    <br /><br />
+                <ul style={{ fontSize: "20px" }} className="skills-text1">
+                <h3>🎨 Data Analysis & Visualization:</h3>
+                <ul>
+                    <li>Tableau</li> 
+                    <li>Power BI</li>
+                    <li>Matplotlib</li>                     
+                    <li>Seaborn</li> 
+                    <li>ggplot</li>
+                </ul>
                     
-                    🔹 <strong>HMI & Embedded Systems:</strong><br />
-                    PowerVision by Enovation Controls
-                    <br /><br />
-                    CAN Bus Communication, DBC File Creation, Automotive HMI Logic Design
-                </p>
+                <h3>🗄️ Database & Big Data:</h3>
+                <ul>
+                    <li>Database Design</li>
+                    <li>Query Optimization</li>
+                    <li>Data Warehousing</li>
+                </ul>
+
+                <h3>🔄 Data Engineering:</h3>
+                <ul>
+                    <li>Data Preprocessing</li>
+                    <li>Feature Engineering</li>
+                    <li>AWS-based Big Data Handling</li>
+                    <li>Graph-based Data Processing</li>
+                    <li>Custom Pipeline Development</li>
+                </ul>
+                </ul>
+            
             </div>
 
         </div>
 
     </div>
-
-
 );
 }
 

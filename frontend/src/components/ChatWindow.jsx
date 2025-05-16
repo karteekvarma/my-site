@@ -17,7 +17,6 @@ export default function ChatWindow() {
     setMessages((prev) => [
       ...prev,
       { role: "user", text: userInput },
-      //{ role: "bot", text: "This is a dummy response until the backend exists" }
     ]);
 
     try {

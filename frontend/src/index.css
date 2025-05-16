@@ -53,7 +53,7 @@
 .chatbot {
   flex: 1;
   max-width: 35%;
-  height: 600px;
+  height: 1200px;
   max-width: 600px;
   background-color: #f4f4f9;
   border-radius: 18px;
@@ -63,6 +63,16 @@
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.08);
   outline: 10px solid rgba(158, 54, 28, 0.2);
 }
+
+.karpers-container {
+  margin: 0 auto;
+  padding: 20px 40px;
+  margin-top: 40px;
+  box-sizing: border-box;
+  background: linear-gradient(to right, #fff3e0, #ffe0b2); 
+  border-radius: 16px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+} 
 
 
 .chat-window {
