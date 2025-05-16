@@ -3,6 +3,7 @@ import Tabs from "./components/Tabs";
 import Skills, { DomainSkills } from "./components/Skills";
 import TypewriterBanner from "./components/TypewriterBanner";
 import About_karper from "./components/About_karper";
+import Projects from "./components/Projects";
 import Forms from "./components/Forms";
 
 
@@ -77,7 +78,8 @@ export default function App() {
     <div className="App">  
         <Header/>    
         <Tabs/>
-        <Aboutme/>  
+        <Aboutme/>
+        <Projects/>  
         <Forms/>
     </div>
   );

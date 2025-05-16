@@ -29,7 +29,7 @@ node_modules
 *.bin
 *.pdf
 *.pyc
-
+*.production
 backend/cache_dir/
 runfiles.txt
 backend/chroma_store/
