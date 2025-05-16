@@ -34,7 +34,7 @@ function Header() {
 
 function Aboutme() {
   return (
-    <div className="pagewrapper">
+    <div id="about-section" className="pagewrapper">
       <div className="intro">
         <h2 style={{ fontSize: "35px" }} className="section-header" >About Me</h2>
         <p style={{ fontSize: "25px" }}className="intro-text">
@@ -58,11 +58,11 @@ function Aboutme() {
         <DomainSkills />
         </div>
 
-      <div id="chat-section" className="chatbot">
+      <div className="chatbot">
          <div id="about-karper-section" className="about-karper">                   
                   <About_karper />
           </div>
-      <h2 style={{ fontSize: "35px" }} className="section-header2" >Hi I'am Kar_Per</h2>         
+      <h2 style={{ fontSize: "35px" }} id="chat-section" className="section-header2" >Hi I'am Kar_Per</h2>         
             <ChatWindow />
          
       </div>

@@ -1,6 +1,6 @@
 export default function Skills() {
 return (
-    <div className="skillcontainer">
+    <div id ='skills-section' className="skillcontainer">
         <h2 style={{ fontSize: "35px" }} className="skills-header"> <strong>💼Skills Snapshot:</strong></h2>
 
         <div className="allskills">

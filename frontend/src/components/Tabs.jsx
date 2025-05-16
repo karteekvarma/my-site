@@ -15,7 +15,7 @@ export default function Tabs() {
         <button className="tab-button" onClick={() => scrollToSection("chat-section")}>
           Talk To The Bot Kar_Per
         </button>
-        <button className="tab-button" onClick={() => scrollToSection("projects-section")}>
+        <button className="tab-button" onClick={() => scrollToSection("project-section")}>
           View Projects
         </button>
         <button className="tab-button" onClick={() => scrollToSection("skills-section")}>

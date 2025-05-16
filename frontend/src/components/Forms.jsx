@@ -19,7 +19,7 @@ function Forms() {
     }    
 
     return (
-        <div className="form-container">
+        <div id="forms-section" className="form-container">
             <h2 style={{ fontSize: "35px" }} className="ContactForm">Contact Me:</h2>
             <strong style={{ fontSize: "25px", paddingRight: "50px" }} className="form-name">Name:  </strong>
             <input 

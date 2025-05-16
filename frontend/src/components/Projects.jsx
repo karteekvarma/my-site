@@ -23,7 +23,7 @@ const projects = [
       'Created a virtual assistant chatbot using OpenAI API and ChromaDB',
       'Implemented RAG (Retrieval-Augmented Generation) for enhanced responses',
       'Integrated and hosted it with a personal web portfolio',
-      ''
+      'Utilized FastAPI for backend and Uvicorn for ASGI server',
 
     ],
     tech: ['Hugging Face Transformers', 'LangChain', 'SHAP', 'FastAPI', 'Uvicorn', 'Pydantic'],
@@ -45,7 +45,7 @@ const projects = [
 
 export default function Projects() {
   return (
-    <section className="projects-section">
+    <section id="project-section" className="projects-section">
       <div className="projects-container">
         <h2 className="projects-title">Projects</h2>
         <div className="projects-grid">
