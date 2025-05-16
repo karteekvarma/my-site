@@ -26,7 +26,7 @@ const projects = [
       'Utilized FastAPI for backend and Uvicorn for ASGI server',
 
     ],
-    tech: ['Hugging Face Transformers', 'LangChain', 'SHAP', 'FastAPI', 'Uvicorn', 'Pydantic'],
+    tech: ['Hugging Face Transformers', 'LangChain', 'FastAPI', 'Uvicorn', 'Pydantic'],
     github: 'https://github.com/karteekvarma/my-site/tree/main/backend/rag_bot',
   },
   {
