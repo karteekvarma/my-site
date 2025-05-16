@@ -1,3 +1,0 @@
-npx vite build --base=/my-site/
-
-npx gh-pages -d dist
