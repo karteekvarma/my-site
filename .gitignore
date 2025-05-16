@@ -31,7 +31,7 @@ node_modules
 *.pyc
 
 backend/cache_dir/
-runfiles/
+runfiles.txt
 backend/chroma_store/
-MistralAPIKey.txt/
-npxcommands.txt/
+MistralAPIKey.txt
+npxcommands.txt
