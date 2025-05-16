@@ -33,5 +33,5 @@ node_modules
 backend/cache_dir/
 runfiles/
 backend/chroma_store/
-MistralAPIKey/
-npxcommands/
+MistralAPIKey.txt/
+npxcommands.txt/
