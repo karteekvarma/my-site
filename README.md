@@ -122,7 +122,3 @@ my-site/
   Rotate API keys periodically.
   
   Do not expose hardcoded secrets in frontend JavaScript (use environment variables on the backend only).
-
-
-
-
