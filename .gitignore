@@ -23,7 +23,6 @@ node_modules
 *.sln
 *.sw?
 *.docx
-*.txt
 *.pdf
 *.env
 *.sqlite3
