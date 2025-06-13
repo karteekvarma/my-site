@@ -23,6 +23,7 @@ function Header() {
           <h1>Karteek Varma Pericharla</h1>
           <h2>Software Developer, AI Enthusiast</h2>
           <h2>Illinois Institute of Technology || MS Artificial Intelligence</h2>
+          <h2>Email: karteek.aiml@gmail.com</h2>
           <TypewriterBanner/>
 
         </div>
