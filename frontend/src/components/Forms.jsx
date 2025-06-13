@@ -21,7 +21,7 @@ function Forms() {
     return (
         <div id="forms-section" className="form-container">
             <h2 style={{ fontSize: "35px" }} className="ContactForm">Contact Me:</h2>
-            <strong style={{ fontSize: "25px", paddingLeft: "50px", paddingRight: "50px" }} className="form-name">'Forms are currently not in action, please use the shared email'</strong>
+            <p style={{ fontSize: "25px", paddingLeft: "50px", paddingRight: "50px" }}>Forms are currently not in action, please use the shared email</p>
             <strong style={{ fontSize: "25px", paddingRight: "50px" }} className="form-name">Name:  </strong>
             <input 
                 type="text" 
