@@ -28,11 +28,11 @@ def query_mistral_api(prompt: str) -> str:
     payload = {
         "model": "mistral-small-2503",
         "messages": [
-            {"role": "system", "content": "You are a helpful assistant. Answer strictly from the given context."},
+            {"role": "system", "content": "You are a helpful assistant. Answer strictly from the given information as per the question."},
             {"role": "user", "content": prompt}
         ],
-        "temperature": 0.5,
-        "max_tokens": 100
+        "temperature": 0.75,
+        "max_tokens": 250
     }
 
     response = requests.post(MISTRAL_API_URL, headers=MISTRAL_HEADERS, json=payload)
@@ -66,7 +66,7 @@ async def chat(req: ChatRequest):
         retrieved_docs = db.similarity_search(query, k=2)
         context = "\n\n".join([doc.page_content for doc in retrieved_docs])
 
-        print(f"📄 Retrieved context:\n{context}\n{'='*80}")
+        #print(f"📄 Retrieved context:\n{context}\n{'='*80}")
 
         if not context.strip():
             return {"response": "No relevant documents found. Please rephrase your question."}
