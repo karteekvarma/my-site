@@ -79,6 +79,7 @@ Context:
 Question: {query}"""
 
         response = query_mistral_api(prompt)
+        response = response[:response.rfind('.')] + '.' if '.' in response else response
         return {"response": response.strip()}
 
     except HTTPError as http_err:
