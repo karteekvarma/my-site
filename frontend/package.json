@@ -4,17 +4,16 @@
   "version": "0.0.0",
   "type": "module",
   "homepage": "https://karteekvarma.github.io/my-site",
- "scripts": {
-  "dev": "vite",
-  "build": "vite build",
-  "build:render": "cross-env VITE_DEPLOY_TARGET=render vite build",
-  "build:gh": "cross-env VITE_DEPLOY_TARGET=gh-pages vite build",
-  "lint": "eslint .",
-  "preview": "vite preview",
-  "predeploy": "rimraf dist && vite build --base=/my-site/",
-  "deploy": "gh-pages -d dist --repo=https://github.com/karteekvarma/my-site.git"
-},
-
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "build:render": "cross-env VITE_DEPLOY_TARGET=render vite build",
+    "build:gh": "cross-env VITE_DEPLOY_TARGET=gh-pages vite build",
+    "lint": "eslint .",
+    "preview": "vite preview",
+    "predeploy": "rimraf dist && vite build --base=/my-site/",
+    "deploy": "gh-pages -d dist --repo=https://github.com/karteekvarma/my-site.git"
+  },
   "dependencies": {
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
