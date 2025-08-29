@@ -39,7 +39,7 @@ function Aboutme() {
       <div className="intro">
         <h2 style={{ fontSize: "35px" }} className="section-header" >About Me</h2>
         <p style={{ fontSize: "25px" }}className="intro-text">
-            I’m Karteek Varma Pericharla, based in Chicago, Illinois. I have completed my M.S. in Computer Science (Artificial Intelligence) at Illinois Tech (May 2025) 
+            I’m Karteek Varma Pericharla, based in Chicago, Illinois. I have completed my M.S. in Computer Science (Artificial Intelligence) at Illinois Tech (May 2024) 
           after earning an MBA in AI/ML & Finance from Woxsen University and a B.Tech in Mechanical Engineering from JNTUK— a journey that’s grounded me in both 
           analytical rigor and creative problem-solving. 
           <br /><br />
